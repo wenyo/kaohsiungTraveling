@@ -1,0 +1,19 @@
+// Footer Setting
+.footer{
+    background: $color-fiv;
+    height: 90px;
+    text-align: center;
+    .container{
+        padding: 20px;
+    }
+    .kaohsiungTraveling{
+        color: $color-master;
+        margin-bottom: 15px;
+    }
+}
+.dataFrom{
+    a{
+    color: $color-four;
+    text-decoration: none;
+    }
+}

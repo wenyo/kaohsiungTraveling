@@ -1,0 +1,133 @@
+// Content Setting
+.content{
+    .container{
+        margin: 60px;
+        @include phone500(){
+            margin: 40px 0;
+        }
+    }
+    .areaName{
+        font-size: $fontsize-xl;
+        color:$color-six;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .list{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        li{
+            width: 48%;
+            margin: 1%;
+            float: left;
+            box-shadow: 0 1px 3px 0 $color-eigh;
+            transition: all .4s; 
+            &:hover{
+                box-shadow: 0 1px 5px 4px $color-eigh;
+            }
+        }
+        p{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            &:hover{
+                white-space: normal;
+            }
+        }
+        @include ipad800(){
+            li{
+                width: 96%;
+                margin: 2%
+            }
+        }
+    }
+}
+
+.areaTitle{
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    h3{
+        position: absolute;
+        bottom : 10px;
+        left : 0;
+        z-index : 1;
+        font-size: $fontsize-l;
+        color: $color-master;
+        background: $color-eigh;
+        border-radius: 0 5px 0 0;
+        padding: 10px;
+        padding-left: 20px;
+    }
+    p{
+        position: absolute;
+        bottom : 20px;
+        right : 20px;
+        color: $color-master;
+    }
+    img{
+        min-height: 100%;
+        width: 100%;
+        position: absolute;
+        top: -50%;
+        @include pc1100(){
+            top: -10%;
+        }
+    }
+}
+
+.areaContent{
+    padding: 20px;
+    line-height: 2;
+    position: relative;
+    .tel{
+        float: left;
+    }
+    .ticketInfo{
+        float: right;
+    }
+    .fas{
+        margin-right: 10px;
+    }
+    .clockStyle{
+        color: $color-six;
+    }
+    .mapPinStyle{
+        color: $color-thir;
+    }
+    .phoneStyle{
+        color: $color-fiv;
+    }
+    .tagStyle{
+        color: $color-four;
+    }
+}
+
+.page{
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    li{
+        display: inline;
+    }
+    a{
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        color : $color-fiv;
+        transition: all .4s; 
+        &:hover{
+            background: $color-eigh;
+            border-radius: 5px;
+        }
+    }
+    .pageActive{
+        color: $color-sec;
+        cursor: default;
+        &:hover{
+            background:none;
+        }
+    }
+}
