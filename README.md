@@ -1,3 +1,4 @@
 # kaohsiungTraveling
 
-js/scss/html/AJAX json
+scss / html
+js / AJAX json
