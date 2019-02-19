@@ -1,19 +1,25 @@
 // Footer Setting
 .footer{
-    background: $color-fiv;
-    height: 90px;
+    
     text-align: center;
     .container{
         padding: 20px;
+        background: $color-fiv;
     }
-    .kaohsiungTraveling{
-        color: $color-master;
+    a{
         margin-bottom: 15px;
+        text-decoration: none;
+        color: $color-sev;
+        padding: 2px 5px;
+        border-radius: 5px;
+        &:hover{
+            background: $color-four;
+            color:$color-fiv;
+        }
     }
 }
-.dataFrom{
-    a{
-    color: $color-four;
-    text-decoration: none;
-    }
+
+
+.gitHubLink,.dataFrom{
+    margin: 15px;
 }

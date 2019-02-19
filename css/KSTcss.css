@@ -463,22 +463,28 @@ img {
 }
 
 .footer {
-  background: #559AC8;
-  height: 90px;
   text-align: center;
 }
 
 .footer .container {
   padding: 20px;
+  background: #559AC8;
 }
 
-.footer .kaohsiungTraveling {
-  color: #FFFFFF;
+.footer a {
   margin-bottom: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2px 5px;
+  border-radius: 5px;
 }
 
-.dataFrom a {
-  color: #F5D105;
-  text-decoration: none;
+.footer a:hover {
+  background: #F5D105;
+  color: #559AC8;
+}
+
+.gitHubLink, .dataFrom {
+  margin: 15px;
 }
 /*# sourceMappingURL=KSTcss.css.map */
