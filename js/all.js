@@ -1,13 +1,13 @@
 // AJAX JSON
 let openData = "";
-let xhr = new XMLHttpRequest();
-xhr.open("get","https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97",true);
-xhr.send(null);
-xhr.onload = function(){
-    openData = (JSON.parse(xhr.responseText)).result.records;
-    showAreaSelect();
-    searchAreaLoop('三民區'); // 預設顯示區域
-}
+fetch("https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97",{})
+    .then((res) => res.json())
+    .then((jsonData) => openData = jsonData.result.records)
+    .then(() => {
+        showAreaSelect();
+        searchAreaLoop('三民區');
+    })
+    .catch((err) => console.log("錯誤",err));
 
 // 1.Dom
 const banner = document.querySelector('.banner');
@@ -46,28 +46,6 @@ function showAreaSelect() {
         areaOption += `<option value="${key}">${key}</option>`;
     }
     areaSelect.innerHTML = str + areaOption;
-    
-    // // 抓出全部資料的 Zone 建立 Array "areaList"
-    // const areaList = [];
-    // for(let i = 0; i < openData.length; i++){
-    //     areaList.push(openData[i].Zone);
-    // }
-    // // 扣掉重複的 Zone ,建立不重複 Zone 的 Array "area"
-    // const area = [];
-    // areaList.forEach(function(value){
-    //     if (area.indexOf(value) == -1) {
-    //         area.push(value);
-    //     }
-    // })
-    // const len = area.length;
-
-    // // 選項建立
-    // let areaOption = "";
-    // const str = `<option value="nothing" selected="selected">--請選擇行政區--</option>`;
-    // for (let i = 0; i < len; i++){
-    //     areaOption += `<option value="${area[i]}">${area[i]}</option>`;
-    // }
-    // areaSelect.innerHTML = str + areaOption;
 }
 
 // 5-2.Show Area Info 將選擇地區的旅遊資訊列出來
