@@ -41,7 +41,7 @@ function showAreaSelect() {
     }
     // 選項建立
     let areaOption = "";
-    const str = `<option value="nothing" selected="selected">--請選擇行政區--</option>`;
+    const str = `<option selected="true" disabled="disabled">--請選擇行政區--</option>`;
     for (let key of areaSet.keys()){
         areaOption += `<option value="${key}">${key}</option>`;
     }
@@ -163,4 +163,3 @@ function popularArea (e) {
     const poular = e.target.innerText;
     searchAreaLoop(poular);
 }
-
